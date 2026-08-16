@@ -1,0 +1,104 @@
+/* --- Responsividade (Para Celulares) --- */
+@media (max-width: 768px) {
+  :root { --nav-width: 70vw; }
+  .site-nav { width: 70%; }
+
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .background-typo {
+    display: none; /* Esconde o fundo PH no mobile para limpar a tela */
+  }
+
+  .menu-btn {
+    top: 20px;
+    left: unset;
+    right: 20px;
+  }
+
+  .main-title {
+    font-size: 3rem;
+  }
+
+  .main-title .big-text {
+    font-size: 4rem;
+  }
+
+  .role-title {
+    font-size: 2rem;
+    margin-left: 0;
+  }
+
+  .intro-box {
+    text-align: center;
+    align-self: center;
+    margin-top: 30px;
+  }
+  .marquee-content span {
+    font-size: 40px;
+  }
+}
+
+/* --- Footer Responsivo --- */
+@media (max-width: 768px) {
+  .footer-section {
+    padding: 50px 20px;
+    margin-top: 80px;
+  }
+
+  .footer-text h4 {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+
+  .footer-text p {
+    font-size: 16px;
+  }
+
+  .social-links {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .social-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .footer-bottom p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-section {
+    padding: 40px 15px;
+    margin-top: 60px;
+  }
+
+  .footer-content {
+    gap: 35px;
+  }
+
+  .footer-text h4 {
+    font-size: 20px;
+    letter-spacing: 1.5px;
+  }
+
+  .footer-text p {
+    font-size: 14px;
+  }
+
+  .social-links {
+    gap: 15px;
+  }
+
+  .social-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+}
