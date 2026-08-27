@@ -79,8 +79,12 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: -10vh;
+  
+
 }
+  .menu-btn {
+    margin-left: -4vw;
+  }
 
 .button:hover {
   background-color: #fbd404;
@@ -101,7 +105,7 @@ header {
   border: 2px solid #fbd404;
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.8);
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 .button:hover::before {
@@ -271,10 +275,10 @@ header {
 
   .projects {
     display: flex;
-    position: relative;
     justify-content: center;
     align-items: center;
     gap: 5%;
+    
 
     .button {
       background-color: #010101;
@@ -301,7 +305,6 @@ header {
       align-items: end;
       border-radius: 30px;
       padding: 30px;
-      position: relative;
       box-shadow: 0 10px 40px rgba(1, 1, 1, 0.6);
 
       h3 {
@@ -334,6 +337,7 @@ header {
   }
   to {
     opacity: 1;
+    transform: translatex(0);
   }
 }
 @keyframes slideLeft {
@@ -342,7 +346,8 @@ header {
     transform: translatex(5%);
   }
   to {
-    opacity: 0.5;
+    opacity: 1;
+    transform: translatex(0);
   }
 }
 
