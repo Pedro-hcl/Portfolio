@@ -1,3 +1,9 @@
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.getElementById('preloader-geo').classList.add('preloader-hidden');
+  }, 2800);
+});
+
 // Animações da página
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
@@ -9,16 +15,19 @@ const smoother = ScrollSmoother.create({
 gsap.from("header", {
   opacity: 0,
   duration: 2,
+  delay: 1.5 
 });
 
 gsap.from(".hero-section", {
   opacity: 0,
   duration: 2,
+  delay: 1.5
 });
 
 gsap.from(".background-typo", {
   opacity: 0,
   duration: 2,
+  delay: 1.5
 });
 
 gsap.from(".about-group", {
@@ -66,16 +75,15 @@ gsap.from(".projects", {
   },
 });
 
-//gsap.to(".projects-section" , {
-//y: -300,
-//scrollTrigger: {
-//trigger: ".projects-section",
-//markers:true,
-//start: "100% 100%",
-//end: "130% 0%",
-//scrub: true,
-//}
-//});
+gsap.to(".projects-section" , {
+y: -300,
+scrollTrigger: {
+trigger: ".projects-section",
+start: "100% 100%",
+end: "130% 0%",
+scrub: true,
+}
+});
 
 
 
