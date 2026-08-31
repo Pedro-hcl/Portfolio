@@ -55,6 +55,37 @@ body {
   overflow-x: hidden;
   height: 100vh;
   position: relative;
+
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* --- Botão de Tradução --- */
+
+.lang-btn {
+  background-color: transparent;
+  border: 1px solid #fbd404;
+  color: #fbd404;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lang-btn:hover {
+  background-color: #fbd404;
+  color: #010101;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(251, 212, 4, 0.4);
 }
 
 
@@ -138,7 +169,11 @@ header {
   position: absolute;
   top: 80px;
   left: 120px;
+  right: 120px; 
   z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
 }
 
 .button {
@@ -277,9 +312,10 @@ header {
   
 
   h3 {
-    font-weight: 10;
-  }
-}
+    font-size: inherit; 
+    font-weight: inherit; 
+
+}}
 
 .intro-box {
   margin-top: 60px;
@@ -338,6 +374,11 @@ header {
     }
   }
 }
+
+.about-section .mini-title h3 {
+  white-space: nowrap; /* Impede a quebra de linha do texto */
+}
+
 /* --- Meus projetos --- */
 .projects-section {
   background-color: #f4f4f5;

@@ -1,6 +1,7 @@
 window.addEventListener("load", () => {
   setTimeout(() => {
     document.getElementById('preloader-geo').classList.add('preloader-hidden');
+    document.body.classList.remove('no-scroll');
   }, 2800);
 });
 
@@ -213,5 +214,77 @@ scrub: true,
     if (rightBtn) {
       rightBtn.addEventListener("click", nextProject);
     }
+  }
+})();
+
+/* --- Sistema de Tradução (Inglês / Português) --- */
+(function () {
+  const langBtn = document.getElementById('lang-btn');
+  let isPt = false; // Começa em inglês
+
+  // Dicionário mapeando os seletores do CSS com os textos
+  const translations = {
+    // Menu
+    ".site-nav ul li:nth-child(1) a": { en: "Home", pt: "Início" },
+    ".site-nav ul li:nth-child(2) a": { en: "About me", pt: "Sobre mim" },
+    ".site-nav ul li:nth-child(3) a": { en: "Projects", pt: "Projetos" },
+    ".site-nav ul li:nth-child(4) a": { en: "Skills", pt: "Habilidades" },
+    ".site-nav ul li:nth-child(5) a": { en: "Certificates", pt: "Certificados" },
+    ".site-nav ul li:nth-child(6) a": { en: "Contact me", pt: "Contato" },
+    
+    // Hero Section
+    ".main-title": { 
+      en: "HELLO!<br /><span class=\"light-text\">I AM</span><br /><span class=\"big-text\">PEDRO</span>", 
+      pt: "OLÁ!<br /><span class=\"light-text\">EU SOU</span><br /><span class=\"big-text\">PEDRO</span>" 
+    },
+    ".intro-box h3": { en: "INTRODUCE", pt: "INTRODUÇÃO" },
+    ".introduce p": { 
+      en: "Blending the precision of code with the beauty of design to build immersive web experiences.", 
+      pt: "Unindo a precisão do código com a beleza do design para criar experiências web imersivas." 
+    },
+    
+    // Sobre Mim
+    ".about-group .mini-title h3": { en: "ABOUT ME", pt: "SOBRE MIM" },
+    ".about-me p:nth-child(1)": { 
+      en: "I'm 18 years old and I'm a Software Engineering student. I'm currently in my third semester and I'm very excited about what the future holds.", 
+      pt: "Tenho 18 anos e sou estudante de Engenharia de Software. Atualmente estou no terceiro semestre e muito animado com o que o futuro reserva." 
+    },
+    ".about-me p:nth-child(2)": { 
+      en: "I'm trying to learn as much as possible about web development and other technology-related areas, with the goal of becoming a well-rounded and up-to-date professional.", 
+      pt: "Busco aprender o máximo possível sobre desenvolvimento web e outras áreas de tecnologia, com o objetivo de me tornar um profissional completo e atualizado." 
+    },
+    
+    // Títulos de Seções
+    ".project-title": { en: "PROJECTS", pt: "PROJETOS" },
+    ".skills-section .mini-title": { en: "SKILLS", pt: "HABILIDADES" },
+    ".certificates-list-section .mini-title h3": { en: "CERTIFICATES", pt: "CERTIFICADOS" },
+    
+    // Footer
+    ".footer-text h4": { en: "CONNECTED WITH ME", pt: "CONECTE-SE COMIGO" },
+    ".footer-text p": { en: "Follow me on social media and let's chat!", pt: "Siga-me nas redes sociais e vamos conversar!" },
+    ".footer-bottom p": { en: "&copy; 2026 Designed & Developed by Pedro Leão.", pt: "&copy; 2026 Projetado e Desenvolvido por Pedro Leão." }
+  };
+
+  if (langBtn) {
+    langBtn.addEventListener('click', () => {
+      isPt = !isPt; 
+      langBtn.innerText = isPt ? 'EN' : 'PT'; 
+      
+      
+      for (const selector in translations) {
+        const element = document.querySelector(selector);
+        if (element) {
+          
+          gsap.to(element, { 
+            opacity: 0, 
+            duration: 0.3, 
+            onComplete: () => {
+              element.innerHTML = isPt ? translations[selector].pt : translations[selector].en;
+              gsap.to(element, { opacity: 1, duration: 0.3 });
+            }
+          });
+        }
+      }
+    });
   }
 })();
